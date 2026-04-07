@@ -8,7 +8,7 @@
 The first hardware product built for [OpenClaw](https://openclaw.ai). A tiny wearable AI clip — always listening, always acting, powered by your own AI agent.
 
 <p align="center">
-  <img src="https://pub-6f7c1879412045ad8bf9eef70f06652d.r2.dev/pinclaw/gallery-1.webp" alt="Pinclaw" width="600" />
+  <img src="./assets/gallery-1.png" alt="Pinclaw" width="600" />
 </p>
 
 [![Discord](https://img.shields.io/badge/discord-join-5865F2?logo=discord&logoColor=white)](https://discord.gg/628R3FbV)&ensp;&ensp;&ensp;
