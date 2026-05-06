@@ -1,6 +1,0 @@
-[submodule "firmware"]
-	path = firmware
-	url = https://github.com/ericshang98/pinclaw-firmware.git
-[submodule "hardware"]
-	path = hardware
-	url = https://github.com/ericshang98/pinclaw-hardware.git
