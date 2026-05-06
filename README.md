@@ -1,46 +1,129 @@
-# Pinclaw — Wearable AI Voice Agent
+<p align="center">
+  <img src="ios/Pinclaw/Assets.xcassets/pinclaw-product.imageset/pinclaw-product.png" alt="Pinclaw" width="280">
+</p>
 
-Pinclaw is a clip-on wearable AI device. Press a button, speak naturally, and your personal AI agent schedules, remembers, researches, and acts on your behalf — hands-free, screen-free.
+<h1 align="center">Pinclaw</h1>
 
-**Website:** [pinclaw.ai](https://pinclaw.ai)
+<p align="center">
+  <strong>A tiny clip-on AI that listens, thinks, and acts.</strong><br>
+  Hands-free. Screen-free. One tap to dispatch.
+</p>
 
-## What It Does
+<p align="center">
+  <a href="https://pinclaw.ai">Website</a> &nbsp;·&nbsp;
+  <a href="https://pinclaw.ai/reserve">Pre-order ($99)</a> &nbsp;·&nbsp;
+  <a href="https://pinclaw.ai/doc/specs">Specs</a>
+</p>
 
-- **One-tap voice dispatch** — 3 seconds to assign a task, 5x faster than pulling out your phone
-- **Autonomous agent** — schedules meetings, drafts emails, sets reminders, books reservations in the background
-- **Context memory** — remembers people, conversations, and threads across weeks
-- **Deep iPhone integration** — Calendar, Reminders, Contacts, Health, HomeKit, all voice-controlled
-- **Open ecosystem** — works with OpenClaw, Hermes, Ollama, or any OpenAI-compatible backend
+---
+
+## Why Pinclaw
+
+Phone assistants answer questions. Pinclaw **acts**.
+
+Clip it on, press the button, speak naturally — your AI agent schedules meetings, drafts emails, sets reminders, and books reservations in the background. You move on with your life.
+
+- **3 seconds** to assign a task (vs. ~30s on phone)
+- **Autonomous execution** — it works while you don't
+- **Context memory** — remembers people, conversations, and threads for weeks
+- **Deep iPhone integration** — Calendar, Reminders, Contacts, Health, HomeKit, all by voice
+- **99.2% recognition accuracy** in noisy environments
+- **Open ecosystem** — use our managed cloud, or bring your own AI
+
+## How It Works
+
+```
+┌─────────────┐       BLE 5.0       ┌─────────────┐       WSS        ┌─────────────────┐
+│  Pinclaw    │  ─── Opus audio ──> │  iPhone App │  ────────────>   │  Pinclaw Cloud  │
+│  (clip-on)  │  <── TTS playback── │  (STT/TTS)  │  <────────────   │  (AI agent)     │
+└─────────────┘                     └─────────────┘                  └─────────────────┘
+  button + mic                       iOS 17.0+                         Claude / GPT-4o
+  haptic feedback                    Swift/UIKit                        or your own model
+```
+
+One tap starts recording. Release to send. The agent responds by voice — no screen needed.
 
 ## Hardware
 
-Purpose-built hardware — not a phone app or simulator.
+Purpose-built for voice-first AI interaction:
 
-- Custom clip-on form factor
-- Beamforming mic array with noise suppression
-- BLE 5.0 audio streaming (Opus codec)
-- One-button push-to-talk interaction
-- 12-hour battery life
+| Spec             | Detail                               |
+| ---------------- | ------------------------------------ |
+| Form factor      | Clip-on, wearable                    |
+| Microphone       | Beamforming array, noise suppression |
+| Audio codec      | Opus over BLE 5.0                    |
+| Feedback         | Haptic + LED (no screen)             |
+| Battery          | ~12 hours typical use                |
+| Charging         | USB-C, ~45 min to full               |
+| Water resistance | IPX4 splash-resistant                |
+| Interaction      | Single-button push-to-talk           |
+
+## Three Ways to Use It
+
+| Mode            | What It Is                                                                 | Cost              |
+| --------------- | -------------------------------------------------------------------------- | ----------------- |
+| **Pinclaw Pro** | Managed AI agent in the cloud. Latest models, zero setup.                  | $29/mo or $279/yr |
+| **MyOpenClaw**  | Connect your own [OpenClaw](https://github.com/BasedHardware/omi) instance | Free              |
+| **MyHermes**    | Local AI via any OpenAI-compatible backend (Ollama, etc.)                  | Free              |
+
+Buy the hardware once ($99). Choose your AI.
+
+## Software Stack
+
+| Layer        | Technology                                        |
+| ------------ | ------------------------------------------------- |
+| Firmware     | JieLi AC6956 (custom BLE audio profile)           |
+| Mobile       | iOS (Swift/UIKit), Android (Kotlin/Compose)       |
+| Cloud        | Node.js + TypeScript, Fastify, PostgreSQL, Redis  |
+| AI           | Claude Sonnet 4, GPT-4o, or bring your own        |
+| Website      | Next.js + Tailwind CSS, Cloudflare Pages          |
+| Local bridge | `pinclaw-bridge` (npm package for self-hosted AI) |
 
 ## Repository Structure
 
 ```
 pinclaw/
-├── firmware/    # Device firmware (BLE audio + button control)
-├── hardware/    # Hardware design files (3D models, wiring diagrams)
-└── plugin/      # OpenClaw plugin for local AI integration
+├── firmware/          # Device firmware (JieLi AC6956)
+├── ios/               # iPhone app (Swift/UIKit)
+├── android/           # Android app (Kotlin/Jetpack Compose)
+├── cloud/             # Cloud control plane (Fastify + WebSocket)
+│   └── api/           #   REST API + real-time WS gateway
+├── bridge/            # Local AI bridge (pinclaw-bridge)
+├── website/           # pinclaw.ai (Next.js)
+├── hardware/          # 3D printing files, schematics
+└── docs/              # Architecture docs
 ```
 
-Each subdirectory is a git submodule linking to its own repository.
+## Development
 
-## Pricing
+```bash
+# Cloud API
+cd cloud/api && npm install && npm run dev
 
-| Plan | Price | What You Get |
-|------|-------|-------------|
-| Hardware | $99 (pre-order) | Pinclaw clip device |
-| Pinclaw Pro | $29/mo or $279/yr | Managed AI agent, latest models, zero setup |
-| Bring Your Own Agent | Free | Connect your own AI backend |
+# Website
+cd website && npm install && npm run dev
+
+# iOS app
+open ios/Pinclaw.xcodeproj
+
+# Android app
+# Open android/ in Android Studio
+```
+
+## Privacy
+
+- Raw audio is never stored — discarded immediately after transcription
+- Voice data streams over encrypted WebSocket (WSS)
+- Self-hosted modes keep all data on your own infrastructure
+- No always-on listening — recording only while button is held
 
 ## License
 
 MIT
+
+---
+
+<p align="center">
+  <strong>Talk. Act. Move on.</strong><br>
+  <a href="https://pinclaw.ai/reserve">Reserve yours →</a>
+</p>
