@@ -1,0 +1,10 @@
+# Exclude ACP (Agent Control Protocol) — uses child_process, triggers security scan
+src/acp/
+
+# Dev / standalone files
+standalone.ts
+dev-server.ts
+gw-test*.cjs
+gw-probe*.cjs
+test-session-arch.cjs
+test/

@@ -1,0 +1,57 @@
+{
+  "name": "pinclaw",
+  "version": "0.2.0",
+  "description": "OpenClaw Pinclaw hardware voice interface channel plugin",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ericshang98/pinclaw.git",
+    "directory": "plugin"
+  },
+  "homepage": "https://pinclaw.ai",
+  "type": "module",
+  "files": [
+    "dist/",
+    "openclaw.plugin.json",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "node build.mjs",
+    "prepublishOnly": "npm run build"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "qrcode-terminal": "^0.12.0",
+    "ws": "^8.18.0"
+  },
+  "peerDependencies": {
+    "openclaw": ">=2026.5.0"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.5.14",
+    "esbuild": "^0.28.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.8.0"
+  },
+  "openclaw": {
+    "extensions": [
+      "./index.ts"
+    ],
+    "runtimeExtensions": [
+      "./dist/index.js"
+    ],
+    "channel": {
+      "id": "pinclaw",
+      "label": "Pinclaw",
+      "selectionLabel": "Pinclaw",
+      "blurb": "Connect OpenClaw to Pinclaw hardware voice device.",
+      "order": 90
+    },
+    "install": {
+      "npmSpec": "pinclaw",
+      "defaultChoice": "npm",
+      "minHostVersion": ">=2026.5.0"
+    }
+  }
+}

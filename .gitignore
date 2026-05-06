@@ -1,0 +1,12 @@
+node_modules/
+dist/
+*.tgz
+.DS_Store
+
+# Local test/debug scripts
+gw-test*.cjs
+gw-test*.js
+gw-probe*.cjs
+test-session-arch.cjs
+dev-server.ts
+standalone.ts

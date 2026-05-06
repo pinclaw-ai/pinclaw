@@ -1,0 +1,60 @@
+{
+  "id": "pinclaw",
+  "channels": ["pinclaw"],
+  "name": "Pinclaw",
+  "description": "Hardware voice interface channel for OpenClaw",
+  "channelConfigs": {
+    "pinclaw": {
+      "schema": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "description": "Enable the Pinclaw channel",
+            "default": true
+          },
+          "authToken": {
+            "type": "string",
+            "description": "Authentication token for the Pinclaw WebSocket server (auto-generated on login)"
+          },
+          "wsPort": {
+            "type": "number",
+            "description": "WebSocket server port",
+            "default": 18790
+          },
+          "relay": {
+            "type": "object",
+            "description": "Pinclaw Cloud relay configuration",
+            "properties": {
+              "enabled": {
+                "type": "boolean",
+                "description": "Enable relay connection to pinclaw.ai"
+              },
+              "token": {
+                "type": "string",
+                "description": "Relay authentication token (set via openclaw pinclaw login)"
+              },
+              "url": {
+                "type": "string",
+                "description": "Relay server URL",
+                "default": "wss://api.pinclaw.ai"
+              }
+            }
+          }
+        }
+      },
+      "label": "Pinclaw",
+      "description": "Pinclaw hardware voice interface configuration.",
+      "uiHints": {
+        "authToken": { "sensitive": true },
+        "relay.token": { "sensitive": true }
+      }
+    }
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  }
+}
