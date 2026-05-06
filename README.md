@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="public/pinclaw-hero.png" alt="Pinclaw" width="720">
-</p>
-
 <h1 align="center">Pinclaw</h1>
 
 <p align="center">
@@ -24,6 +20,10 @@
 </p>
 
 ---
+
+<p align="center">
+  <img src="public/pinclaw-hero.png" alt="Pinclaw" width="720">
+</p>
 
 Clip it on, press the button, speak naturally. Your AI agent schedules meetings, drafts emails, sets reminders, books reservations — all in the background. You move on with your life.
 
