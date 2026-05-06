@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="ios/Pinclaw/Assets.xcassets/pinclaw-product.imageset/pinclaw-product.png" alt="Pinclaw" width="280">
+  <img src="pinclaw-product.png" alt="Pinclaw" width="280">
 </p>
 
 <h1 align="center">Pinclaw</h1>
