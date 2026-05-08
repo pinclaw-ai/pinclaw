@@ -87,7 +87,7 @@ Open the [Pinclaw iOS app](https://apps.apple.com/app/pinclaw/id6760344343), sig
 
 | Mode | What It Is | Cost |
 |------|-----------|------|
-| **Pinclaw Pro** | Managed AI agent in the cloud. Latest models (Claude, GPT-4o, Gemini), zero setup. | $29/mo or $279/yr |
+| **Pinclaw AI** | Managed AI agent in the cloud. Latest models (Claude, GPT-4o, Gemini), zero setup. | $29/mo or $279/yr |
 | **MyOpenClaw** | Run your own [OpenClaw](https://github.com/BasedHardware/omi) instance. We handle the relay. | Free |
 | **MyHermes** | Local AI via Hermes, Ollama, or any OpenAI-compatible backend. No cloud required. | Free |
 
@@ -114,15 +114,15 @@ Purpose-built for voice-first interaction. No screen — by design.
 
 | Spec | Detail |
 |------|--------|
-| Microphone | Beamforming array, noise suppression |
-| Audio | Opus codec over BLE 5.0 |
-| Feedback | Haptic + LED (no screen) |
-| Battery | ~12 hours typical use |
-| Charging | USB-C, ~45 min to full |
-| Water resistance | IPX4 splash-resistant |
+| MCU | Seeed XIAO nRF52840 Sense (ARM Cortex-M4 @ 64MHz) |
+| Microphone | PDM MEMS (built into XIAO Sense) |
+| Audio | Opus codec over BLE 5.0, I2S speaker (MAX98357A) |
+| Feedback | RGB LED + speaker (no screen) |
+| Battery | 3.7V LiPo, USB-C charging (onboard BQ25101) |
+| Firmware | Zephyr RTOS v2.2.0 ([source + UF2](firmware/pinclaw_zephyr/)) |
 | Interaction | Single-button push-to-talk |
 
-The `hardware/` directory contains 3D-printable enclosure files (OpenSCAD + STL) if you want to build or modify the clip.
+The `hardware/` directory contains 3D-printable enclosure STL files. The `firmware/` directory contains the full Zephyr source code and a pre-built UF2 binary — flash via drag-and-drop, no programmer needed.
 
 ## iPhone Integration
 
@@ -144,9 +144,11 @@ All data stays on your iPhone. You control every permission.
 
 ```
 pinclaw/
+├── firmware/
+│   └── pinclaw_zephyr/  # Zephyr RTOS firmware (source + UF2 binary)
+├── hardware/
+│   └── enclosure/       # 3D-printable enclosure (STL files)
 ├── plugin/              # OpenClaw channel plugin (npm package)
-├── firmware/            # Device firmware (BLE audio, mic, LED)
-├── hardware/            # 3D-printable enclosure (v1–v4, OpenSCAD + STL)
 └── public/              # Product assets
 ```
 
