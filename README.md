@@ -40,7 +40,7 @@ You hear  ← Pinclaw Clip (TTS) ← iPhone App ← ── ── AI Response
 | | |
 |---|---|
 | **Acts, not answers** | Schedules, drafts, books — autonomously. Not just Q&A. |
-| **Hears you cleanly** | 99.2% recognition accuracy in noisy environments. |
+| **Hears you cleanly** | PDM mic + Opus codec + cloud STT for accurate recognition. |
 | **Holds your context** | Remembers people, conversations, and threads for weeks. |
 | **Deep iPhone integration** | Calendar, Reminders, Contacts, Health, HomeKit — all by voice. |
 | **Open ecosystem** | Use our managed cloud, or bring your own AI. |
@@ -111,10 +111,10 @@ Purpose-built for voice-first interaction. No screen — by design.
 | Audio | Opus codec over BLE 5.0, I2S speaker (MAX98357A) |
 | Feedback | RGB LED + speaker (no screen) |
 | Battery | 3.7V LiPo, USB-C charging (onboard BQ25101) |
-| Firmware | Zephyr RTOS v2.2.0 ([source + UF2](firmware/pinclaw_zephyr/)) |
+| Firmware | Zephyr RTOS v2.2.0 ([source + UF2](hardware-opensource/firmware/pinclaw_zephyr/)) |
 | Interaction | Single-button push-to-talk |
 
-The `hardware/` directory contains 3D-printable enclosure STL files. The `firmware/` directory contains the full Zephyr source code and a pre-built UF2 binary — flash via drag-and-drop, no programmer needed.
+The [`hardware-opensource/`](hardware-opensource/) directory contains everything you need to build a Pinclaw Clip: firmware source code, 3D-printable enclosure STL files, wiring guides, and a schematic PDF. Flash the UF2 binary via drag-and-drop — no programmer needed.
 
 ## iPhone Integration
 
@@ -136,12 +136,14 @@ All data stays on your iPhone. You control every permission.
 
 ```
 pinclaw/
-├── firmware/
-│   └── pinclaw_zephyr/  # Zephyr RTOS firmware (source + UF2 binary)
-├── hardware/
-│   └── enclosure/       # 3D-printable enclosure (STL files)
-├── plugin/              # OpenClaw channel plugin (npm package)
-└── public/              # Product assets
+├── hardware-opensource/       # Open-source DIY Kit
+│   ├── firmware/              #   Zephyr firmware (source + UF2 binary)
+│   ├── enclosure/             #   3D printing files (STL)
+│   ├── models/                #   STEP component models
+│   ├── wiring/                #   Wiring guides (EN + CN)
+│   └── docs/                  #   Schematic PDF, design brief
+├── plugin/                    # OpenClaw channel plugin (npm package)
+└── public/                    # Product assets
 ```
 
 ## Privacy
