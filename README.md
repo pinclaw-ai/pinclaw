@@ -2,7 +2,7 @@
 
 <p align="center">
   <strong>A wearable terminal for your own AI agents.</strong><br>
-  Dispatch tasks to Claude Code, OpenClaw, or Codex — hands-free, no phone, no app.
+  Talk to your Claude Code, OpenClaw, or Codex anytime, anywhere — hands-free, no phone, no app.
 </p>
 
 <p align="center">
@@ -25,7 +25,9 @@
   <img src="public/pinclaw-hero.png" alt="Pinclaw" width="720">
 </p>
 
-You already have powerful agents — Claude Code, OpenClaw, Codex. They're stuck at your desk. Clip it on, tap, and say one sentence: the task is **dispatched to your own agent**. It runs in the background and the result comes back when it's done. Dispatch, not chat — press, speak, move on.
+You already have powerful agents — Claude Code, OpenClaw, Codex. They're stuck at your desk. Pinclaw is the channel between you and them: a terminal you wear, so you can reach your own agent anytime, anywhere. Tap it, say one sentence, and the task is **dispatched to your own agent**. It runs in the background and the result comes back when it's done. Dispatch, not chat — press, speak, move on.
+
+Two form factors, one capability: the **Clip** ($129, available now) clips to your collar; the **Ring** — our flagship — is in private beta, making "raise your hand and dispatch an agent" as invisible as a ring on your finger. Your whole agent fleet, always on you.
 
 ```
 You speak → Pinclaw Clip (BLE) → iPhone App (STT) → Cloud → your own agent
