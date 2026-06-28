@@ -285,7 +285,7 @@ export class RelayClient {
         const { code } = (await resp.json()) as { code: string };
         this.log.info(`\n========================================`);
         this.log.info(`  Pairing code: ${code}`);
-        this.log.info(`  Enter this code in the Pinclaw iPhone app`);
+        this.log.info(`  Enter this code in the Nexting iPhone app`);
         this.log.info(`  Expires in 5 minutes`);
         this.log.info(`========================================\n`);
       }

@@ -39,12 +39,12 @@ export const pinclawPlugin = {
 
   meta: {
     id: "pinclaw" as const,
-    label: "Pinclaw",
-    selectionLabel: "Pinclaw Hardware Clip",
+    label: "Nexting",
+    selectionLabel: "Nexting Hardware PIN",
     docsPath: "channels/pinclaw",
     blurb:
-      "Hardware voice interface for OpenClaw — wearable clip with mic, speaker, and button",
-    aliases: ["hardware", "clip"],
+      "Hardware voice interface for OpenClaw — wearable device with mic, speaker, and button",
+    aliases: ["hardware", "pin", "clip"],
   },
 
   capabilities: {
@@ -195,7 +195,7 @@ export const pinclawPlugin = {
       policy: "open" as const,
       allowFrom: ["*"],
       allowFromPath: "channels.pinclaw.dm.",
-      approveHint: "Pinclaw hardware device",
+      approveHint: "Nexting hardware device",
     }),
   },
 

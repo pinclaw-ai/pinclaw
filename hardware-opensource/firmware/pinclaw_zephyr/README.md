@@ -1,6 +1,6 @@
-# Pinclaw Firmware
+# Nexting Firmware
 
-Zephyr RTOS firmware for the Pinclaw wearable AI clip, built on nRF Connect SDK 2.7.0.
+Zephyr RTOS firmware for the Nexting wearable AI device, built on nRF Connect SDK 2.7.0.
 
 ## Hardware
 

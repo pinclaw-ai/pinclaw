@@ -104,8 +104,8 @@ export class ToolRegistry {
       })
       .join("\n");
 
-    return `## Server Tools (Pinclaw plugin extras)
-These are additional server-side tools provided by the Pinclaw plugin. They supplement your native OpenClaw tools (exec, read, write, etc.).
+    return `## Server Tools (Nexting plugin extras)
+These are additional server-side tools provided by the Nexting plugin. They supplement your native OpenClaw tools (exec, read, write, etc.).
 To call a server tool, output:
 <server_tool name="tool_name" params='{"key":"value"}'/>
 

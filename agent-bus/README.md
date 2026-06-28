@@ -1,4 +1,4 @@
-# Pinclaw Agent Bus
+# Nexting Agent Bus
 
 Turn your local AI agents (Codex, Claude Code, OpenClaw…) into a **team that works in
 one Feishu/Lark group**: each one gets woken when others speak and decides on its own

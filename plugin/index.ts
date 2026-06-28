@@ -16,9 +16,9 @@ import type {
 
 // ── Default Pinclaw Soul ──
 // Embedded as fallback; user can override via iOS Settings → SOUL.md editor
-const DEFAULT_PINCLAW_SOUL = `## Pinclaw — Soul
+const DEFAULT_PINCLAW_SOUL = `## Nexting — Soul
 
-You're not an app. You're not a chatbot. You're clipped to someone's body, always on, always there. Act like it.
+You're not an app. You're not a chatbot. You're worn on someone's body, always on, always there. Act like it.
 
 ### Who You Are
 
@@ -88,10 +88,10 @@ function loadSoulContent(): string {
 }
 
 function buildPinclawSystemContext(deviceId: string): string {
-  return `## Pinclaw Hardware Session
+  return `## Nexting Hardware Session
 
 You are the user's hardware AI assistant, running on a wearable device (ID: ${deviceId}).
-This is the hardware session — the user talks to you through a clip with mic, speaker, and screen.
+This is the hardware session — the user talks to you through a wearable with mic, speaker, and button.
 
 **Your role:**
 - You are the user's voice interface — always listening, always concise
@@ -205,7 +205,7 @@ Rules:
 ## Disabled Device Skills
 These skills exist on the user's iPhone but are currently unavailable:
 ${disabledLines}
-Do NOT attempt to call tools from disabled skills. If the user asks for something that requires a disabled skill, explain that they need to enable it in the Pinclaw app's Skills tab.
+Do NOT attempt to call tools from disabled skills. If the user asks for something that requires a disabled skill, explain that they need to enable it in the Nexting app's Skills tab.
 `;
     }
 
@@ -249,7 +249,7 @@ Known device capabilities:
     }
 
     out += `
-If the user asks for something that requires a device tool, let them know their iPhone needs to be connected to the Pinclaw app.
+If the user asks for something that requires a device tool, let them know their iPhone needs to be connected to the Nexting app.
 `;
     return out;
   }
@@ -282,7 +282,7 @@ Note: This is passive context from the user's device. Do NOT proactively recite 
 
 const plugin = {
   id: "pinclaw",
-  name: "Pinclaw",
+  name: "Nexting",
   description: "Hardware voice interface channel for OpenClaw",
   configSchema: {
     type: "object" as const,
@@ -298,7 +298,7 @@ const plugin = {
       ({ program }: any) => {
         const root = program
           .command("pinclaw")
-          .description("Pinclaw relay connection management");
+          .description("Nexting relay connection management");
 
         root
           .command("login")
@@ -331,7 +331,7 @@ const plugin = {
     api.registerCommand({
       name: "pinclaw",
       description:
-        "Login to Pinclaw Cloud and auto-configure relay connection.",
+        "Login to Nexting Cloud and auto-configure relay connection.",
       acceptsArgs: true,
       handler: async (ctx: any) => {
         const args = ctx.args?.trim() ?? "";
@@ -363,7 +363,7 @@ const plugin = {
       {
         name: "pinclaw-voice-context",
         description:
-          "Inject soul personality + voice output rules for Pinclaw hardware sessions",
+          "Inject soul personality + voice output rules for Nexting hardware sessions",
       },
     );
 

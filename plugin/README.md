@@ -1,12 +1,12 @@
 <p align="center">
-  <img src="https://pinclaw.ai/logo.png" alt="Pinclaw" width="80" />
+  <img src="https://pinclaw.ai/logo.png" alt="Nexting" width="80" />
 </p>
 
-<h1 align="center">Pinclaw</h1>
+<h1 align="center">Nexting</h1>
 
 <p align="center">
   <strong>The first hardware product built for <a href="https://openclaw.ai">OpenClaw</a>.</strong><br/>
-  A tiny wearable AI clip that gives your OpenClaw agent a voice, ears, and a body.
+  A tiny wearable that gives your OpenClaw agent a voice, ears, and a body.
 </p>
 
 <p align="center">
@@ -26,18 +26,18 @@
 
 ---
 
-## What is Pinclaw?
+## What is Nexting?
 
-Pinclaw is a complete personal AI agent system — not just a gadget, not just an app. It's an entire ecosystem purpose-built for OpenClaw:
+Nexting is a complete personal AI agent system — not just a gadget, not just an app. It's an entire ecosystem purpose-built for OpenClaw:
 
-**🔧 Hardware** — A tiny clip with a microphone, powered by XIAO nRF52840 Sense. Clip it on, forget it's there.
+**🔧 Hardware** — A tiny wearable with a microphone, powered by XIAO nRF52840 Sense. Pin it on, forget it's there.
 
 **📱 iPhone App** — Real-time speech recognition, intelligent routing, and device skill integration. Your phone becomes the bridge between you and your agent.
 
 **☁️ Cloud** — Your own OpenClaw instance with your own database, your own agent, your own scheduling. Not shared. Yours.
 
 ```
-You speak → Pinclaw Clip (BLE) → iPhone App → OpenClaw Plugin → Gateway → AI
+You speak → Nexting PIN (BLE) → iPhone App → OpenClaw Plugin → Gateway → AI
                                                                           ↓
 You hear  ← iPhone App ← Plugin ← ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─  AI Response
 ```
@@ -48,7 +48,7 @@ You hear  ← iPhone App ← Plugin ← ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ 
 
 - [OpenClaw](https://openclaw.ai) **v2026.5.0** or later
 - Node.js 22+
-- [Pinclaw iOS app](https://apps.apple.com/app/pinclaw/id6760344343)
+- [Nexting iOS app](https://apps.apple.com/app/pinclaw/id6760344343)
 
 ### 1. Install the plugin
 
@@ -59,7 +59,7 @@ openclaw plugins install pinclaw --dangerously-force-unsafe-install
 <details>
 <summary>Why <code>--dangerously-force-unsafe-install</code>?</summary>
 
-OpenClaw's security scanner blocks plugins that use `child_process` or read environment variables combined with network requests. Pinclaw uses both for legitimate reasons:
+OpenClaw's security scanner blocks plugins that use `child_process` or read environment variables combined with network requests. Nexting uses both for legitimate reasons:
 
 - **`child_process`** — Local agent orchestration (ACP protocol)
 - **`process.env` + `fetch`** — Reading API keys (`IMAGE_API_KEY`, `TTS_API_KEY`) to call AI generation APIs
@@ -110,14 +110,14 @@ You should see relay: connected and your device listed.
 
 | Layer            | What                | Role                                                             |
 | ---------------- | ------------------- | ---------------------------------------------------------------- |
-| **Pinclaw Clip** | XIAO nRF52840 Sense | Always-on voice capture, BLE streaming to iPhone                 |
+| **Nexting PIN** | XIAO nRF52840 Sense | Always-on voice capture, BLE streaming to iPhone                 |
 | **iPhone App**   | Swift, native       | Speech recognition (Apple + Deepgram), device skills, AI routing |
 | **This Plugin**  | `pinclaw`           | Channel adapter — bridges iPhone ↔ OpenClaw Gateway              |
 | **OpenClaw**     | Gateway + Agent     | Your personal AI runtime, database, scheduling                   |
 
 ### Two Ways to Use
 
-**Cloud Mode** — We run everything. Buy the clip, download the app, and your personal OpenClaw instance is ready. No setup.
+**Cloud Mode** — We run everything. Buy the PIN, download the app, and your personal OpenClaw instance is ready. No setup.
 
 **My OpenClaw Mode** — You run OpenClaw on your own machine. The plugin connects via relay through our cloud, so your iPhone can reach your home server from anywhere.
 
@@ -143,14 +143,14 @@ The plugin maintains awareness of your device state — battery level, current c
 │                    iPhone App                         │
 │  ┌──────────┐  ┌──────────┐  ┌───────────────────┐  │
 │  │ BLE Recv │  │ Apple STT│  │ Device Skills      │  │
-│  │ (Clip)   │→ │ Deepgram │→ │ Calendar/Reminders │  │
+│  │ (PIN)    │→ │ Deepgram │→ │ Calendar/Reminders │  │
 │  └──────────┘  └──────────┘  └───────────────────┘  │
 │                      │                                │
 │              Unified WebSocket                        │
 └──────────────────────┼───────────────────────────────┘
                        │
             ┌──────────▼──────────┐
-            │   Pinclaw Cloud     │
+            │   Nexting Cloud     │
             │   (Relay Server)    │
             └──────────┬──────────┘
                        │
@@ -267,12 +267,12 @@ The AI agent will automatically see and use your tools.
 | 📖 **Documentation** | [pinclaw.ai/doc](https://pinclaw.ai/doc)                     |
 | 💬 **Discord**       | [Join our community](https://discord.gg/628R3FbV)            |
 | 🐦 **Twitter**       | [@EricShang98](https://x.com/EricShang98)                    |
-| 🛒 **Buy Pinclaw**   | [pinclaw.ai](https://pinclaw.ai/#pricing)                    |
+| 🛒 **Buy Nexting**   | [pinclaw.ai](https://pinclaw.ai/#pricing)                    |
 | 🔧 **OpenClaw**      | [openclaw.ai](https://openclaw.ai)                           |
 
 ## Contributing
 
-We welcome contributions! Pinclaw is fully open source.
+We welcome contributions! Nexting's core is open source (MIT).
 
 1. Fork this repository
 2. Create your feature branch (`git checkout -b feature/amazing`)

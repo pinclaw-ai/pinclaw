@@ -167,12 +167,12 @@ export async function handlePinclawStatus(
     const relay = config.channels?.pinclaw?.relay;
     if (relay?.enabled && relay?.token) {
       return {
-        text: `Pinclaw relay: configured (token=${relay.token.substring(0, 8)}...)`,
+        text: `Nexting relay: configured (token=${relay.token.substring(0, 8)}...)`,
       };
     }
-    return { text: "Pinclaw relay: not configured. Run /pinclaw login" };
+    return { text: "Nexting relay: not configured. Run /pinclaw login" };
   } catch {
-    return { text: "Pinclaw relay: not configured. Run /pinclaw login" };
+    return { text: "Nexting relay: not configured. Run /pinclaw login" };
   }
 }
 
@@ -187,7 +187,7 @@ export async function handlePinclawLogout(
       delete config.channels.pinclaw.authToken;
       writeFileSync(configPath, JSON.stringify(config, null, 2), "utf-8");
     }
-    return { text: "Pinclaw relay config removed." };
+    return { text: "Nexting relay config removed." };
   } catch {
     return { text: "Nothing to remove." };
   }

@@ -21,7 +21,7 @@ export class InteractiveAI {
     recentEntries: InteractiveEntry[],
     currentTime: string,
   ): Promise<string> {
-    const systemPrompt = `你是 Pinclaw Interactive AI。用户按了 Play 按钮，主动请求你说话。
+    const systemPrompt = `你是 Nexting Interactive AI。用户按了 Play 按钮，主动请求你说话。
 
 规则：
 - 你能看到最近的对话记录和时间戳，根据时间差自行判断该说什么

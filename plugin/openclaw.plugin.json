@@ -1,7 +1,7 @@
 {
   "id": "pinclaw",
   "channels": ["pinclaw"],
-  "name": "Pinclaw",
+  "name": "Nexting",
   "description": "Hardware voice interface channel for OpenClaw",
   "channelConfigs": {
     "pinclaw": {
@@ -11,12 +11,12 @@
         "properties": {
           "enabled": {
             "type": "boolean",
-            "description": "Enable the Pinclaw channel",
+            "description": "Enable the Nexting channel",
             "default": true
           },
           "authToken": {
             "type": "string",
-            "description": "Authentication token for the Pinclaw WebSocket server (auto-generated on login)"
+            "description": "Authentication token for the Nexting WebSocket server (auto-generated on login)"
           },
           "wsPort": {
             "type": "number",
@@ -25,7 +25,7 @@
           },
           "relay": {
             "type": "object",
-            "description": "Pinclaw Cloud relay configuration",
+            "description": "Nexting Cloud relay configuration",
             "properties": {
               "enabled": {
                 "type": "boolean",
@@ -44,8 +44,8 @@
           }
         }
       },
-      "label": "Pinclaw",
-      "description": "Pinclaw hardware voice interface configuration.",
+      "label": "Nexting",
+      "description": "Nexting hardware voice interface configuration.",
       "uiHints": {
         "authToken": { "sensitive": true },
         "relay.token": { "sensitive": true }

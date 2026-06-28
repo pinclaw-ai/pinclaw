@@ -527,7 +527,7 @@ export function handleWsConnection(ws: WebSocket, deps: WsHandlerDeps): void {
         sendWs(ws, {
           type: "agent_message",
           content:
-            "Pinclaw relay is already configured. Use the iPhone app to manage your connection.",
+            "Nexting relay is already configured. Use the iPhone app to manage your connection.",
           proactive: false,
         });
         return;

@@ -1,6 +1,6 @@
-# Pinclaw Clip — Open-Source Hardware
+# Nexting PIN — Open-Source Hardware
 
-This is the complete, open-source hardware design for the Pinclaw Clip: a wearable AI device you can 3D-print and assemble yourself.
+This is the complete, open-source hardware design for the Nexting PIN: a wearable AI device you can 3D-print and assemble yourself.
 
 Press the button, say what you need, let go. Your AI agent handles the rest — scheduling, messaging, reminders, whatever — while you keep your hands free and your phone in your pocket.
 
@@ -29,7 +29,7 @@ You'll need a 3D printer, a soldering iron, and about an hour.
 1. **Print** three parts: `base.stl`, `cover.stl`, `button.stl` from [`enclosure/current-version/`](enclosure/current-version/)
 2. **Solder** 9 wire connections between the XIAO, audio amplifier, button, LED, and battery — no custom PCB needed. Full wiring diagram: [`docs/SCH_pinclaw_v1.0_diy.pdf`](docs/SCH_pinclaw_v1.0_diy.pdf)
 3. **Flash** the firmware: double-tap the Reset button on the XIAO, then drag [`pinclaw_v2.2.0.uf2`](firmware/pinclaw_zephyr/pinclaw_v2.2.0.uf2) onto the USB drive that appears
-4. **Download** the [Pinclaw app](https://apps.apple.com/app/pinclaw/id6760344343) on your iPhone, sign in, and pair via Bluetooth
+4. **Download** the [Nexting app](https://apps.apple.com/app/pinclaw/id6760344343) on your iPhone, sign in, and pair via Bluetooth
 
 For step-by-step photos and troubleshooting, see the [full hardware guide on pinclaw.ai](https://pinclaw.ai/doc/specs#hardware).
 
@@ -54,7 +54,7 @@ For step-by-step photos and troubleshooting, see the [full hardware guide on pin
   You hear   <--  [ I2S speaker ]  <--  [ BLE 5.0 ]  <--   AI Response
 ```
 
-The XIAO's built-in PDM microphone captures your voice. The firmware encodes it to Opus in real-time and streams it over BLE to the Pinclaw iOS app. The app sends it to the cloud, where an AI agent processes your request and responds. The response plays back through the I2S speaker on the clip.
+The XIAO's built-in PDM microphone captures your voice. The firmware encodes it to Opus in real-time and streams it over BLE to the Nexting iOS app. The app sends it to the cloud, where an AI agent processes your request and responds. The response plays back through the I2S speaker on the device.
 
 One button. No screen. No wake word.
 
@@ -75,9 +75,9 @@ Key pin assignments on the XIAO nRF52840:
 
 ## Design Lineage
 
-The enclosure design is inspired by [OMI](https://github.com/BasedHardware/omi) (formerly Friend), an open-source AI wearable. We redesigned the geometry to improve button feel and clip ergonomics — the button sits more naturally under your thumb and the clip grips thinner fabrics better.
+The enclosure design is inspired by [OMI](https://github.com/BasedHardware/omi) (formerly Friend), an open-source AI wearable. We redesigned the geometry to improve button feel and pin ergonomics — the button sits more naturally under your thumb and the pin grips thinner fabrics better.
 
-The firmware is written from scratch for Pinclaw on Zephyr RTOS. It handles push-to-talk recording with a 500ms confirmation threshold (short taps trigger playback instead), real-time Opus encoding, BLE audio streaming, I2S speaker output, and battery monitoring — all tailored for voice-first interaction.
+The firmware is written from scratch for Nexting on Zephyr RTOS. It handles push-to-talk recording with a 500ms confirmation threshold (short taps trigger playback instead), real-time Opus encoding, BLE audio streaming, I2S speaker output, and battery monitoring — all tailored for voice-first interaction.
 
 ## License
 
