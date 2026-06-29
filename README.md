@@ -75,11 +75,11 @@ Nexting is a terminal, not a model. Connect the agent you already run:
 | **MyHermes** | Any OpenAI-compatible local AI — Hermes Agent, Ollama, vLLM, LM Studio. | Free |
 | **Nexting Pro** | Managed agent in the cloud. Latest Claude, GPT, and Gemini models, zero setup. | $29/mo or $279/yr |
 
-Buy the hardware once. Dispatch to whichever agent is yours.
+Buy the hardware once. Dispatch to whichever agent is yours. Each mode connects independently — here's how to start each one.
 
-## Claude Code & Codex — How to Start
+### Claude Code & Codex
 
-Claude Code and Codex are their own fully independent surface: your real CLI agent on your Mac, mirrored to your phone and driveable **live** — watch it work, reply for it, answer its prompts, or start a new session by voice.
+A fully independent surface: your real CLI agent on your Mac, mirrored to your phone and driveable **live** — watch it work, reply for it, answer its prompts, or start a new session by voice.
 
 1. **On your Mac**, install the bridge:
 
@@ -97,11 +97,9 @@ Claude Code and Codex are their own fully independent surface: your real CLI age
 
 Full walkthrough (pairing, remote control, starting sessions by voice): [pinclaw.ai/doc](https://pinclaw.ai/doc).
 
-## Other Ways to Connect
-
 ### OpenClaw
 
-Nexting is also the first hardware product built for [OpenClaw](https://github.com/openclaw/openclaw). Install the plugin and link your account:
+Nexting is the first hardware product built for [OpenClaw](https://github.com/openclaw/openclaw). Install the plugin and link your account:
 
 ```bash
 openclaw plugins install pinclaw --dangerously-force-unsafe-install
@@ -119,6 +117,10 @@ npm install -g nexting-hermes-bridge
 nexting-hermes-bridge login
 nexting-hermes-bridge start --endpoint http://localhost:8642 --model hermes-agent
 ```
+
+### Nexting Pro
+
+Managed agent in the cloud — nothing to install. Subscribe in the Nexting app and it's ready to dispatch.
 
 ## Hardware
 
