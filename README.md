@@ -25,7 +25,7 @@
 ---
 
 <p align="center">
-  <img src="public/pinclaw-hero.png" alt="Nexting" width="720">
+  <img src="public/nexting-hero.png" alt="Nexting PIN — white, black, and champagne gold" width="720">
 </p>
 
 You already have powerful agents — Claude Code, OpenClaw, Codex. They're locked to your desk. **Nexting is the channel between you and them**: a terminal you wear, so you can reach your own agent without pulling out your phone or opening an app. Tap it, say one sentence, and the task is **dispatched to your own agent**. It runs in the background and the result comes back when it's done.
