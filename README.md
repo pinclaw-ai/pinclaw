@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="public/nexting-logo.png" alt="Nexting" width="96">
+</p>
+
 <h1 align="center">Nexting</h1>
 
 <p align="center">
