@@ -77,18 +77,29 @@ Nexting is a terminal, not a model. Connect the agent you already run:
 
 Buy the hardware once. Dispatch to whichever agent is yours.
 
-### Connect Claude Code or Codex
+## Claude Code & Codex — How to Start
 
-Run the Nexting Mac bridge — your Claude Code / Codex sessions show up on your phone, live and two-way:
+Claude Code and Codex are their own fully independent surface: your real CLI agent on your Mac, mirrored to your phone and driveable **live** — watch it work, reply for it, answer its prompts, or start a new session by voice.
 
-```bash
-npm install -g nexting-cc-bridge
-nexting-cc-bridge start
-```
+1. **On your Mac**, install the bridge:
 
-Full pairing and remote-control walkthrough: [pinclaw.ai/doc](https://pinclaw.ai/doc).
+   ```bash
+   npm install -g nexting-cc-bridge
+   ```
 
-### Connect via OpenClaw
+2. **Run it** and leave it running:
+
+   ```bash
+   nexting-cc-bridge start
+   ```
+
+3. **In the Nexting app → Add Connection → Claude Code (or Codex)**, follow the one-time pairing prompt. Your sessions then appear on your phone — tap one to drive it live.
+
+Full walkthrough (pairing, remote control, starting sessions by voice): [pinclaw.ai/doc](https://pinclaw.ai/doc).
+
+## Other Ways to Connect
+
+### OpenClaw
 
 Nexting is also the first hardware product built for [OpenClaw](https://github.com/openclaw/openclaw). Install the plugin and link your account:
 
@@ -99,7 +110,7 @@ openclaw pinclaw login
 
 > The npm package and CLI commands use the internal codename `pinclaw` — that's by design, not a leftover. Full plugin docs: [`plugin/README.md`](plugin/README.md).
 
-### Connect a local model (MyHermes)
+### Local model (MyHermes)
 
 Point Nexting at any OpenAI-compatible local AI with the `nexting-hermes-bridge` CLI:
 
