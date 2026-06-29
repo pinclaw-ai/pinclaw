@@ -16,7 +16,6 @@
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License" /></a>
   <a href="https://www.npmjs.com/package/pinclaw"><img src="https://img.shields.io/npm/v/pinclaw.svg" alt="npm" /></a>
-  <a href="https://discord.gg/628R3FbV"><img src="https://img.shields.io/discord/1234567890?color=5865F2&label=discord" alt="Discord" /></a>
 </p>
 
 ---
@@ -103,25 +102,26 @@ Nexting is a terminal, not a model. Connect the agent you already run:
 | Mode | What It Is | Cost |
 |------|-----------|------|
 | **Claude Code** | Attach to a [Claude Code](https://claude.com/product/claude-code) session on your Mac and drive it from your PIN. | Free |
+| **Codex** | Attach to an OpenAI Codex CLI session on your Mac and drive it from your PIN. | Free |
 | **MyOpenClaw** | Run your own [OpenClaw](https://github.com/openclaw/openclaw) instance. We handle the relay. | Free |
-| **MyHermes** | OpenAI-compatible backends — Codex CLI, Ollama, or self-hosted. No cloud required. | Free |
-| **Nexting Pro** | Managed agent in the cloud. Latest models (Claude, GPT-4o, Gemini), zero setup. | $29/mo or $279/yr |
+| **MyHermes** | Any OpenAI-compatible local AI — Hermes Agent, Ollama, vLLM, LM Studio. No cloud required. | Free |
+| **Nexting Pro** | Managed agent in the cloud. Latest Claude, GPT, and Gemini models, zero setup. | $29/mo or $279/yr |
 
 Buy the hardware once. Dispatch to whichever agent is yours.
 
-### Hermes / Local AI Setup
+### MyHermes / Local AI Setup
+
+Point Nexting at any OpenAI-compatible local AI with the `nexting-bridge` CLI:
 
 ```bash
 # install the bridge
-npm install -g pinclaw-bridge
+npm install -g nexting-bridge
 
-# connect to your local AI
-pinclaw-bridge login \
-    --endpoint http://localhost:8642 \
-    --model hermes-agent
+# link your Nexting account
+nexting-bridge login
 
-# start
-pinclaw-bridge start
+# point it at your local AI and start
+nexting-bridge start --endpoint http://localhost:8642 --model hermes-agent
 ```
 
 ## Hardware
@@ -138,7 +138,7 @@ Purpose-built for voice-first interaction. No screen — by design.
 | Firmware | Zephyr RTOS v2.2.0 ([source + UF2](hardware-opensource/firmware/pinclaw_zephyr/)) |
 | Interaction | Single-button push-to-talk |
 
-The [`hardware-opensource/`](hardware-opensource/) directory is a complete open-hardware **Co-Builder Edition**: firmware source, 3D-printable enclosure STLs, wiring guides, and a schematic PDF — everything you need to build a Nexting PIN yourself. Flash the UF2 binary via drag-and-drop — no programmer needed.
+The [`hardware-opensource/`](hardware-opensource/) directory is a complete open-hardware **Co-Builder Edition**: firmware source, 3D-printable enclosure files, and a schematic PDF — everything you need to build a Nexting PIN yourself. Flash the UF2 binary via drag-and-drop — no programmer needed.
 
 ## iPhone Integration
 
@@ -162,10 +162,8 @@ All data stays on your iPhone. You control every permission.
 nexting/
 ├── hardware-opensource/       # Open-source DIY Co-Builder Kit
 │   ├── firmware/              #   Zephyr firmware (source + UF2 binary)
-│   ├── enclosure/             #   3D printing files (STL)
-│   ├── models/                #   STEP component models
-│   ├── wiring/                #   Wiring guides (EN + CN)
-│   └── docs/                  #   Schematic PDF, design brief
+│   ├── enclosure/             #   3D printing files (STL + OpenSCAD)
+│   └── docs/                  #   Schematic PDF
 ├── plugin/                    # OpenClaw channel plugin (npm package)
 └── public/                    # Product assets
 ```

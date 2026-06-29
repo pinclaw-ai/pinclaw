@@ -31,7 +31,7 @@ You'll need a 3D printer, a soldering iron, and about an hour.
 3. **Flash** the firmware: double-tap the Reset button on the XIAO, then drag [`pinclaw_v2.2.0.uf2`](firmware/pinclaw_zephyr/pinclaw_v2.2.0.uf2) onto the USB drive that appears
 4. **Download** the [Nexting app](https://apps.apple.com/app/pinclaw/id6760344343) on your iPhone, sign in, and pair via Bluetooth
 
-For step-by-step photos and troubleshooting, see the [full hardware guide on pinclaw.ai](https://pinclaw.ai/doc/specs#hardware).
+For step-by-step photos and troubleshooting, see the [full hardware guide on pinclaw.ai](https://pinclaw.ai/doc).
 
 ## What's in This Repo
 
