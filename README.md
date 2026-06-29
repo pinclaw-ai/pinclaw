@@ -111,17 +111,17 @@ Buy the hardware once. Dispatch to whichever agent is yours.
 
 ### MyHermes / Local AI Setup
 
-Point Nexting at any OpenAI-compatible local AI with the `nexting-bridge` CLI:
+Point Nexting at any OpenAI-compatible local AI with the `nexting-hermes-bridge` CLI:
 
 ```bash
 # install the bridge
-npm install -g nexting-bridge
+npm install -g nexting-hermes-bridge
 
 # link your Nexting account
-nexting-bridge login
+nexting-hermes-bridge login
 
 # point it at your local AI and start
-nexting-bridge start --endpoint http://localhost:8642 --model hermes-agent
+nexting-hermes-bridge start --endpoint http://localhost:8642 --model hermes-agent
 ```
 
 ## Hardware
